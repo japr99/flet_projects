@@ -286,11 +286,12 @@ class DataTable(ft.DataTable):
         self.rows = []
         # check dict data type to understand following loop
         for values in self.df.values():
+            
             # create a new DataRow
-            data = ft.DataRow()
-            data.cells = [
+            cells = [
                 ft.DataCell(ft.Text(value, color="black")) for value in values.values()
             ]
+            data = ft.DataRow(cells)
 
             self.rows.append(data)
 
